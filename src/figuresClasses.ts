@@ -7,7 +7,7 @@ export interface Figure {
 export class Triangle implements Figure {
   shape: string = 'triangle';
 
-  color;
+  color: string;
 
   constructor(
     color: string,
@@ -18,19 +18,19 @@ export class Triangle implements Figure {
   ) {
     this.color = color;
 
-    if (a <= 0) {
+    if (this.a <= 0) {
       throw new Error('`a` can`t be lower or equal zero');
     }
 
-    if (b <= 0) {
+    if (this.b <= 0) {
       throw new Error('`b` can`t be lower or equal zero');
     }
 
-    if (c <= 0) {
+    if (this.c <= 0) {
       throw new Error('`c` can`t be lower or equal zero');
     }
 
-    const longest: number = Math.max(a, b, c);
+    const longest: number = Math.max(this.a, this.b, this.c);
 
     if (
       (a === longest && a >= b + c) ||
@@ -60,7 +60,7 @@ export class Triangle implements Figure {
 export class Circle implements Figure {
   shape = 'circle';
 
-  color;
+  color: string;
 
   constructor(
     color: string,
@@ -68,7 +68,7 @@ export class Circle implements Figure {
   ) {
     this.color = color;
 
-    if (radius <= 0) {
+    if (this.radius <= 0) {
       throw new Error('`radius` can`t be lower or equal zero');
     }
   }
@@ -81,7 +81,7 @@ export class Circle implements Figure {
 export class Rectangle implements Figure {
   shape = 'rectangle';
 
-  color;
+  color: string;
 
   constructor(
     color: string,
@@ -90,11 +90,11 @@ export class Rectangle implements Figure {
   ) {
     this.color = color;
 
-    if (width <= 0) {
+    if (this.width <= 0) {
       throw new Error('`width` can`t be lower or equal zero');
     }
 
-    if (height <= 0) {
+    if (this.height <= 0) {
       throw new Error('`height` can`t be lower or equal zero');
     }
   }
